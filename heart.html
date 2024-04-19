@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Turtle to JavaScript</title>
+</head>
+<body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <script>
+        // 创建画布
+const canvas = document.createElement('canvas');
+canvas.width = 800;
+canvas.height = 600;
+document.body.appendChild(canvas);
+
+// 获取画笔
+const ctx = canvas.getContext('2d');
+ctx.strokeStyle = 'red';
+ctx.lineWidth = 5;
+
+// 画爱心
+ctx.beginPath();
+ctx.moveTo(400, 400);
+ctx.bezierCurveTo(400, 450, 300, 550, 200, 550);
+ctx.bezierCurveTo(100, 550, 100, 450, 200, 350);
+ctx.lineTo(400, 200);
+ctx.lineTo(600, 350);
+ctx.bezierCurveTo(700, 450, 700, 550, 600, 550);
+ctx.bezierCurveTo(500, 550, 400, 450, 400, 400);
+ctx.stroke();
+
+// 隐藏画笔
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    </script>
+</body>
+</html>
